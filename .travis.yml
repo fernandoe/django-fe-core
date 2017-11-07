@@ -1,0 +1,13 @@
+language: python
+python:
+- 3.6
+script:
+  - make test
+deploy:
+  provider: pypi
+  user: fernando.espindola
+  password:
+    secure: IFQMIcm3XCV6TZIzEPAjyoqPCCpQEiDmlhdsbAMQdC2lqRxarjOVKblOwKP3gIdJPmSGg8mBIYJOfP3QF/gJ3nA28cu0Kp12YoKxilI69FuAKq3DCmbdNrqfxMxW9TsPRTUz8/00eojBNXB/X/ZYcoD3JATJ4FDXct97YPo1JQ20q2eySoOtwNGVTPDB6/hRdnhKBPOTsK9E6f3n2Fp91pyc4qUjN16C4JluWl045Q4fuZj/mxPZ84blbEwbEePt/DRw0vmkZgMxsfrp+kknTgOiUrdTkvpJAPS5Qr9OqrWStbW5rGfR9B5YzBqmk6ILXMYcL2twKVUoEbIPt1baP/49vxXn0c/cXPC2expVs4a+A9ANkZ8rMjwy1P9S112yScVr+7PjIX78ET7z38dVObw7oz5ojB/ucF4yoINOBsv3pOQtHEe7MLrmU2tISXv4J3LIMYnUaWNygqjFRuoT+ZHAuRhm66/dNybOKzpJsv5uufZFt+6svdkXbcwCB95KX/M2fYwCHRSbMR1uZQPoPoqhpczh0pZJ1fqMwPnm6fOGqpcCkKrl2OVdjODssy7SjAuYMhUQ6jCt4q0gTnoe2c93ehB16yto38mb0qYr7kWq9savWyV7nUxIPQs8hByisQR+MleQ/YKS/leXcNwkt1yIMz67mzDjDBhGbrgwcTM=
+  on:
+    tags: true
+    branch: master
