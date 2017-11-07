@@ -1,4 +1,4 @@
 # django-fe-core
 
-[![Build Status](https://travis-ci.org/fernandoe/django-fe-core.svg?branch=release%2F0.1.0)](https://travis-ci.org/fernandoe/django-fe-core)
-[![Requirements Status](https://requires.io/github/fernandoe/django-fe-core/requirements.svg?branch=release%2F0.1.0)](https://requires.io/github/fernandoe/django-fe-core/requirements/?branch=release%2F0.1.0)
+[![Build Status](https://travis-ci.org/fernandoe/django-fe-core.svg?branch=release%2F0.2.0)](https://travis-ci.org/fernandoe/django-fe-core)
+[![Requirements Status](https://requires.io/github/fernandoe/django-fe-core/requirements.svg?branch=release%2F0.2.0)](https://requires.io/github/fernandoe/django-fe-core/requirements/?branch=release%2F0.2.0)
