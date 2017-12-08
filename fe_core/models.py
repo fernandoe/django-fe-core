@@ -48,7 +48,7 @@ class UserManager(BaseUserManager):
 
 
 class User(UUIDModel, AbstractBaseUser, PermissionsMixin):
-    entity = models.ForeignKey(Entity, null=True, blank=True)
+    entity = models.ForeignKey(Entity, null=True, blank=True, on_delete=models.CASCADE)
     email = models.EmailField(unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
