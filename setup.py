@@ -11,13 +11,13 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-fe-core',
-    version='0.3.0',
+    version='0.4.0',
     description='',
     long_description=README,
     url='https://github.com/fernandoe/django-fe-core',
     packages=find_packages(),
     include_package_data=True,
-    license='MIT',
+    license='GPL',
     author='Fernando Espíndola',
     author_email='fer.esp@gmail.com',
 )

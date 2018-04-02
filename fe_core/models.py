@@ -1,11 +1,10 @@
-# -*- coding:utf-8 -*-
 import uuid
 
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 
-from fe_core.base_models import UUIDModel
+from .base_models import UUIDModel
 
 
 class EntityManager(BaseUserManager):
@@ -34,13 +33,15 @@ class UserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(email=self.normalize_email(email))
+        user.is_staff = False
+        user.is_superuser = False
         user.set_password(password)
         user.entity = entity
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password):
-        user = self.create_user(email, password=password)
+    def create_superuser(self, email, password, entity=None):
+        user = self.create_user(email, password=password, entity=entity)
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
