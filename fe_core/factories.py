@@ -1,7 +1,6 @@
 import factory
-from django.contrib.auth.hashers import make_password
 
-from fe_core.models import User, Entity
+from .models import User, Entity
 
 
 class EntityFactory(factory.django.DjangoModelFactory):
@@ -22,5 +21,8 @@ class UserFactory(factory.django.DjangoModelFactory):
 
     @classmethod
     def _create(cls, model_class, *args, **kwargs):
-        kwargs['password'] = make_password(kwargs['password'])
+        from django.contrib.auth.hashers import make_password
+        password = kwargs.get('password')
+        if password:
+            kwargs['password'] = make_password(kwargs['password'])
         return super(UserFactory, cls)._create(model_class, *args, **kwargs)

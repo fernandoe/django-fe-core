@@ -17,6 +17,10 @@ class TestUsuario(TestCase):
         self.assertFalse(usuario.is_superuser)
         self.assertTrue(usuario.is_active)
 
+    def test_user_factory_without_password(self):
+        user = UserFactory()
+        self.assertIsNotNone(user)
+
     def test_check_password(self):
         usuario = UserFactory.create(password=self.password)
         self.assertTrue(usuario.check_password(self.password))
@@ -30,19 +34,12 @@ class TestUsuario(TestCase):
 
     def test_create_user_com_entidade(self):
         self.assertEquals(1, Entity.objects.all().count())
-        usuario = User.objects.create_superuser(
-            email=self.email,
-            password=self.password,
-            entity=self.entity
-        )
+        usuario = User.objects.create_superuser(email=self.email, password=self.password, entity=self.entity)
         self.assertEquals(self.entity, usuario.entity)
         self.assertEquals(1, Entity.objects.all().count())
 
     def test_create_user_sem_entidade(self):
         self.assertEquals(1, Entity.objects.all().count())
-        usuario = User.objects.create_superuser(
-            email=self.email,
-            password=self.password
-        )
+        usuario = User.objects.create_superuser(email=self.email, password=self.password)
         self.assertIsNone(usuario.entity)
         self.assertEquals(1, Entity.objects.all().count())
