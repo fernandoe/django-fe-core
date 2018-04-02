@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from fe_core.models import User, Entity
-from .factories import UserFactory, EntityFactory
+from fe_core.factories import UserFactory, EntityFactory
 
 
 class TestUsuario(TestCase):
